@@ -15,7 +15,7 @@ This plugin adds flickering behavior to both 2D and 3D lights in Godot Engine us
 
 ## Installation
 
-1. Copy the `addons/flickering_light` folder into your project.
+1. Install via AssetLib, or copy the `addons/flickering_light` folder into your project.
 2. In the Godot Editor, go to **Project > Project Settings > Plugins** and enable **Flickering Light**.
 
 ## Usage
@@ -24,6 +24,17 @@ This plugin adds flickering behavior to both 2D and 3D lights in Godot Engine us
 
 1. Add a `FlickeringLight3D` node to your scene.
 2. Adjust the `pattern` and `speed` properties in the Inspector.
+
+### Or you can use it via code
+
+```gdscript
+func _ready() -> void:
+    var flicker_light = FlickeringLight3D.new()
+    flicker_light.max_energy = 2.0
+    flicker_light.pattern = 'mmaammzmaamamzzmaam'
+    flicker_light.position = Vector3(0, 1, 1.5)
+    add_child(flicker_light)
+```
 
 ### For 2D
 
