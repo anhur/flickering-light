@@ -8,6 +8,10 @@ class_name FlickeringLight2D
 var _time := 0.0
 var _frame := 0
 
+
+func _ready() -> void:
+    push_warning("FlickeringLight2D is deprecated and will be removed in the next version. Use FlickeringPointLight2D instead.")
+
 func _process(delta: float) -> void:
     if pattern.is_empty():
         return
