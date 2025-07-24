@@ -22,14 +22,14 @@ This plugin adds flickering behavior to both 2D and 3D lights in Godot Engine us
 
 ### For 3D
 
-1. Add a `FlickeringLight3D` node to your scene.
+1. Add a `FlickeringOmniLight3D` node to your scene.
 2. Adjust the `pattern` and `speed` properties in the Inspector.
 
 ### Or you can use it via code
 
 ```gdscript
 func _ready() -> void:
-    var flicker_light = FlickeringLight3D.new()
+    var flicker_light = FlickeringOmnLight3D.new()
     flicker_light.max_energy = 2.0
     flicker_light.pattern = 'mmaammzmaamamzzmaam'
     flicker_light.position = Vector3(0, 1, 1.5)
@@ -38,7 +38,7 @@ func _ready() -> void:
 
 ### For 2D
 
-1. Add a `FlickeringLight2D` node to your scene.
+1. Add a `FlickeringPointLight2D` node to your scene.
 2. Adjust the `pattern` and `speed` properties in the Inspector.
 
 ## Pattern Format
