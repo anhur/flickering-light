@@ -1,5 +1,5 @@
-extends OmniLight3D
-class_name FlickeringOmniLight3D
+extends SpotLight3D
+class_name FlickeringSpotLight3D
 
 @export var pattern: String = "mmamammmmammamamaaamammma"
 @export var speed: float = 10.0  # frames per second
@@ -20,4 +20,3 @@ func _process(delta: float) -> void:
         var char = pattern[_frame]
         var value = clamp(char.unicode_at(0) - 'a'.unicode_at(0), 0, 25)
         self.light_energy = max_energy * (value / 25.0)
-
