@@ -4,7 +4,7 @@ This plugin adds flickering behavior to both 2D and 3D lights in Godot Engine us
 
 ## Features
 
-- Supports PointLight2D, OmniLight3D, DirectionalLight3D, and SpotLight3D
+- Supports PointLight2D, DirectionalLight2D, LightOccluder2D, OmniLight3D, DirectionalLight3D, and SpotLight3D
 - Flicker patterns are defined as strings (e.g. "mmamammmmammamamaaamammma")
 - Adjustable speed and pattern
 - Lightweight and editor-friendly
@@ -27,6 +27,14 @@ You can use one of the following nodes:
 - `FlickeringOmniLight3D`
 - `FlickeringDirectionalLight3D`
 - `FlickeringSpotLight3D`
+
+### For 2D
+
+You can use one of the following nodes:
+
+- `FlickeringPointLight2D`
+- `FlickeringDirectionalLight2D`
+- `FlickeringLightOccluder2D`
 
 1. Add the desired node to your scene.
 2. Adjust the `pattern`, `speed`, and `max_energy` properties in the Inspector.

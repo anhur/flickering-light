@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4] - 2025-08-21
+### Added
+- `FlickeringDirectionalLight2D`: A new flickering light class based on `DirectionalLight2D`.
+- `FlickeringLightOccluder2D`: A new flickering light class based on `LightOccluder2D`.
+
+### Changed
+- `FlickeringLight2D` replaced with `FlickeringPointLight2D`.
+- `FlickeringLight3D` replaced with `FlickeringOmniLight3D`.
+
+### Removed
+- Deprecated warnings for old classes (`FlickeringLight2D`, `FlickeringLight3D`).
+
+
 ## [0.3] - 2025-07-27
 ### Added
 - `FlickeringDirectionalLight3D`: A new flickering light class based on `DirectionalLight3D`
