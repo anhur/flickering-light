@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5] - 2026-02-24
+### Changed
+- Added `BaseFlickeringLight` to centralize shared flicker frame/time processing logic.
+- Refactored all flickering light classes to delegate `_process()` calculations to `BaseFlickeringLight`.
+- Kept per-node energy assignment in each class:
+  - 2D lights set `energy`.
+  - 3D lights set `light_energy`.
+
 ## [0.4] - 2025-08-21
 ### Added
 - `FlickeringDirectionalLight2D`: A new flickering light class based on `DirectionalLight2D`.
@@ -35,4 +43,3 @@
 ### Deprecated
 - `FlickeringLight3D` is now deprecated and will be removed in the next version. Use `FlickeringOmniLight3D` instead.
 - `FlickeringLight2D` is now deprecated and will be removed in the next version. Use `FlickeringPointLight2D` instead.
-

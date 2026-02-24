@@ -5,19 +5,10 @@ class_name FlickeringPointLight2D
 @export var speed: float = 10.0  # frames per second
 @export var max_energy: float = 2.0  # maximum brightness
 
-var _time := 0.0
-var _frame := 0
+var _base_flickering_light := BaseFlickeringLight.new()
 
 
 func _process(delta: float) -> void:
-    if pattern.is_empty():
-        return
-
-    _time += delta
-    if _time >= 1.0 / speed:
-        _time = 0.0
-        _frame = (_frame + 1) % pattern.length()
-        var char = pattern[_frame]
-        var value = clamp(char.unicode_at(0) - 'a'.unicode_at(0), 0, 25)
-        self.energy = max_energy * (value / 25.0)
-
+    var next_energy = _base_flickering_light.process(delta, pattern, speed, max_energy)
+    if next_energy != null:
+        self.energy = next_energy
