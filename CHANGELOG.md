@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.2] - 2026-02-25
+### Fixed
+- `BaseFlickeringLight`: Made flicker timing FPS-independent by preserving accumulated time (`_time -= step`) instead of resetting to zero.
+- `BaseFlickeringLight`: Added multi-step catch-up (`while _time >= step`) to keep pattern progression stable during long frames.
+- `BaseFlickeringLight`: Added a small timing epsilon in step checks to avoid floating-point drift between frame rates.
+- `BaseFlickeringLight`: Added a safety guard for non-positive `speed`.
+
 ## [0.5] - 2026-02-24
 ### Changed
 - Added `BaseFlickeringLight` to centralize shared flicker frame/time processing logic.
