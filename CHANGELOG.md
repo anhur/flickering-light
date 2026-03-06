@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.3] - 2026-03-03
+### Added
+- Added `phase` property to all flickering light nodes to offset the initial start position in the flicker pattern.
+
 ## [0.5.2] - 2026-02-25
 ### Fixed
 - `BaseFlickeringLight`: Made flicker timing FPS-independent by preserving accumulated time (`_time -= step`) instead of resetting to zero.

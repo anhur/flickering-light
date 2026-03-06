@@ -4,11 +4,18 @@ class_name BaseFlickeringLight
 var _time: float = 0.0
 var _frame: int = -1
 const _TIME_EPSILON := 0.000001
+var _phase_initialized: bool = false
 
 
-func process(delta: float, pattern: String, speed: float, max_energy: float) -> Variant:
+func process(delta: float, pattern: String, speed: float, max_energy: float, phase: float = 0.0) -> Variant:
     if pattern.is_empty() or speed <= 0.0:
         return null
+
+    if not _phase_initialized:
+        var wrapped_phase := wrapf(phase, 0.0, 1.0)
+        var phase_index := int(floor(wrapped_phase * pattern.length())) % pattern.length()
+        _frame = phase_index - 1
+        _phase_initialized = true
 
     var step := 1.0 / speed
     _time += delta
